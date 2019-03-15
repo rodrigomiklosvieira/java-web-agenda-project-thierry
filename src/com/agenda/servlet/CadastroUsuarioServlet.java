@@ -7,20 +7,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CadastroUsuarioServlet  extends HttpServlet{
+import com.agenda.modelos.Pessoas;
 
-	/**
-	 * 
-	 */
+public class CadastroUsuarioServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+	
 		
-		request.getParameter("exampleInputEmail1");
-		System.out.println(request.getParameter("exampleInputEmail1"));
+		Pessoas pessoa = new Pessoas();
+		
+		pessoa.setNome(request.getParameter("nome"));
+		pessoa.setEmail(request.getParameter("email"));
+		pessoa.setSenha(request.getParameter("password"));
+		pessoa.setTelefone(request.getParameter("telefone"));
+		pessoa.setEndereco(request.getParameter("endereco"));
 		
 		
 	}
-	
+
 }
