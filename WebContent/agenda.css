@@ -1,6 +1,11 @@
 @charset "ISO-8859-1";
 
 h1 {
-	color: blue;
-	font-size:150px;
+	color: black;
+	font-size:100px;
 }
+
+a {
+	color: white;
+}
+

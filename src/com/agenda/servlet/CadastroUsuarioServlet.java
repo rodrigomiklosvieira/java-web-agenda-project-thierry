@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.agenda.modelos.Pessoas;
+import com.agenda.service.CadastroUsuarioService;
 
 public class CadastroUsuarioServlet extends HttpServlet {
 
@@ -25,6 +26,11 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		pessoa.setSenha(request.getParameter("password"));
 		pessoa.setTelefone(request.getParameter("telefone"));
 		pessoa.setEndereco(request.getParameter("endereco"));
+	
+		CadastroUsuarioService service = new CadastroUsuarioService();
+		
+		service.cadastra(pessoa);
+		
 		
 		
 	}
