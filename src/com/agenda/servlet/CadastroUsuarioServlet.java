@@ -30,9 +30,7 @@ public class CadastroUsuarioServlet extends HttpServlet {
 		CadastroUsuarioService service = new CadastroUsuarioService();
 		
 		service.cadastra(pessoa);
-		
-		
-		
+
 	}
 
 }
