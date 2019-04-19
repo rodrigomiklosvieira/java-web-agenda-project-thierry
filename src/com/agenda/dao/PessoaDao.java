@@ -30,6 +30,8 @@ public class PessoaDao {
 
 			stmt.execute();
 			stmt.close();
+			
+			buscaPessoas();
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -38,7 +40,7 @@ public class PessoaDao {
 	}
 
 	public List<Pessoas> buscaPessoas() {
-		String SQL = "select + from pessoas";
+		String SQL = "select * from pessoa";
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();
@@ -60,14 +62,15 @@ public class PessoaDao {
 
 			stmt.close();
 			this.connection.close();
-			return pessoas;
+			
+//			System.out.println(pessoas);
+//			return pessoas;
+			
+			
+			return pessoas;	
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-	}
-
-	public void adiciona(Pessoas pessoa) {
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -7,27 +7,25 @@ import com.agenda.modelos.Pessoas;
 
 public class CadastroUsuarioService {
 
-//	public void cadastra(Pessoas pessoa) {
-//		PessoaDao userDAO = new PessoaDao();
-//		userDAO.cadastraDAO(pessoa);
+	public void cadastra(Pessoas pessoa) {
+		PessoaDao userDAO = new PessoaDao();
+		userDAO.cadastraDAO(pessoa);
+	}
 
 	private PessoaDao dao;
 
 	public CadastroUsuarioService() {
 		this.dao = new PessoaDao();
+		
+//		System.out.println(buscaPessoas());
 	}
 
 	public void adiciona(Pessoas pessoa) {
-		this.dao.adiciona(pessoa);
+		this.dao.cadastraDAO(pessoa);
 	}
 
 	public List<Pessoas> buscaPessoas() {
 		return this.dao.buscaPessoas();
-	}
-
-	public void cadastra(Pessoas pessoa) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

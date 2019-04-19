@@ -23,7 +23,7 @@ public class ListaUsuariosServlet extends HttpServlet{
 		
 		request.setAttribute("contatos", contatos);
 		
-		return "Lista-contatos.jsp";
+		return "teste.jsp";
 	}
 	
 	@Override
