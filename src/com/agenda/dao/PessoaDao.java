@@ -16,17 +16,16 @@ public class PessoaDao {
 
 	public void cadastraDAO(Pessoas pessoa) {
 
-		String SQL = "insert into pessoa (nome, senha, email, telefone, endereco) values (?, ?, ?, ?, ?)";
+		String SQL = "insert into pessoa (nome, email, telefone, endereco) values (?, ?, ?, ?)";
 
 		try {
 			this.connection = new ConnectionFactory().getConnection();
 			PreparedStatement stmt = this.connection.prepareStatement(SQL);
 
 			stmt.setString(1, pessoa.getNome());
-			stmt.setString(2, pessoa.getSenha());
-			stmt.setString(3, pessoa.getEmail());
-			stmt.setString(4, pessoa.getTelefone());
-			stmt.setString(5, pessoa.getEndereco());
+			stmt.setString(2, pessoa.getEmail());
+			stmt.setString(3, pessoa.getTelefone());
+			stmt.setString(4, pessoa.getEndereco());
 
 			stmt.execute();
 			stmt.close();
@@ -53,7 +52,6 @@ public class PessoaDao {
 			while (rs.next()) {
 				Pessoas pessoa = new Pessoas();
 				pessoa.setNome(rs.getString("nome"));
-				pessoa.setSenha(rs.getString("senha"));
 				pessoa.setEmail(rs.getString("email"));
 				pessoa.setEndereco(rs.getString("endereco"));
 				pessoa.setTelefone(rs.getString("telefone"));
