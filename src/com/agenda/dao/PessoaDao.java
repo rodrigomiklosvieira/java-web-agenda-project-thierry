@@ -72,4 +72,9 @@ public class PessoaDao {
 		
 	}
 
+	public void removerContato(Pessoas pessoa) {
+		System.out.println("Método remover executado com sucesso");
+		
+	}
+	
 }
