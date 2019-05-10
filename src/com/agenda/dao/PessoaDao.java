@@ -29,7 +29,7 @@ public class PessoaDao {
 
 			stmt.execute();
 			stmt.close();
-			
+
 			buscaPessoas();
 
 		} catch (SQLException e) {
@@ -51,6 +51,7 @@ public class PessoaDao {
 
 			while (rs.next()) {
 				Pessoas pessoa = new Pessoas();
+				pessoa.setId(rs.getLong("id"));
 				pessoa.setNome(rs.getString("nome"));
 				pessoa.setEmail(rs.getString("email"));
 				pessoa.setEndereco(rs.getString("endereco"));
@@ -60,21 +61,30 @@ public class PessoaDao {
 
 			stmt.close();
 			this.connection.close();
-			
+
 //			System.out.println(pessoas);
 //			return pessoas;
-			
-			
-			return pessoas;	
+
+			return pessoas;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-		
+
 	}
 
 	public void removerContato(Pessoas pessoa) {
-		System.out.println("Método remover executado com sucesso");
-		
+
+		String SQL = "delete from pessoa where id=?";
+
+		try {
+			this.connection = new ConnectionFactory().getConnection();
+			PreparedStatement stmt = connection.prepareStatement(SQL);
+			stmt.setLong(1, pessoa.getId());
+			stmt.execute();
+			stmt.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-	
+
 }

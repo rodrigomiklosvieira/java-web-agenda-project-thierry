@@ -3,6 +3,7 @@ package com.agenda.modelos;
 public class Pessoas {
 
 	private String nome, endereco, email, senha, telefone;
+	private long id;
 
 	public String getNome() {
 		return nome;
@@ -43,8 +44,14 @@ public class Pessoas {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
-	
+
+	public long getId() {
+		// TODO Auto-generated method stub
+		return this.id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 }
-
-
